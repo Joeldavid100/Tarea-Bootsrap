@@ -1,0 +1,470 @@
+/* ============================================
+   CAFÉ DEL CENTRO — styles.css
+   Mobile First · Bootstrap 5.3.8
+   Paleta: café oscuro (#2C1A0E), crema (#F5ECD7), dorado (#C8973A)
+   ============================================ */
+
+/* ---- VARIABLES ---- */
+:root {
+  --cafe-dark:       #2C1A0E;
+  --cafe-darker:     #1A0F07;
+  --cafe-medium:     #5C3D1E;
+  --cafe-gold:       #C8973A;
+  --cafe-gold-light: #E8B96A;
+  --cafe-cream:      #F5ECD7;
+  --cafe-cream-dark: #E8D9BE;
+  --cafe-text:       #1A0F07;
+  --cafe-text-muted: #5C3D1E;
+  --cafe-card-bg:    #FFFDF8;
+  --cafe-wrap-h:     120px;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Lato', sans-serif;
+}
+
+/* ---- BASE ---- */
+body {
+  font-family: var(--font-body);
+  background-color: var(--cafe-cream);
+  color: var(--cafe-text);
+}
+
+em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--cafe-gold);
+}
+
+/* ---- NAVBAR ---- */
+.cafe-navbar {
+  background-color: var(--cafe-darker) !important;
+  border-bottom: 2px solid var(--cafe-gold);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.cafe-logo-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.cafe-brand-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--cafe-cream);
+  letter-spacing: 0.02em;
+}
+
+.cafe-navbar .nav-link {
+  color: var(--cafe-cream-dark) !important;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.2s;
+}
+
+.cafe-navbar .nav-link:hover {
+  color: var(--cafe-gold) !important;
+}
+
+.cafe-navbar .navbar-toggler {
+  color: var(--cafe-cream);
+}
+
+/* ---- HERO ---- */
+.cafe-hero {
+  min-height: 75vh;
+  background-color: var(--cafe-dark);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(200,151,58,0.04) 0px,
+      rgba(200,151,58,0.04) 1px,
+      transparent 1px,
+      transparent 14px
+    );
+  position: relative;
+  overflow: hidden;
+}
+
+.cafe-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(92,61,30,0.5) 0%, rgba(26,15,7,0.85) 70%);
+}
+
+.cafe-hero-since {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cafe-gold);
+  font-weight: 700;
+}
+
+.cafe-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 7vw, 4rem);
+  line-height: 1.15;
+  color: var(--cafe-cream);
+}
+
+.cafe-hero-title em {
+  color: var(--cafe-gold-light);
+}
+
+.cafe-hero-sub {
+  font-size: 1rem;
+  color: rgba(245,236,215,0.8);
+  font-weight: 300;
+}
+
+.cafe-btn-gold {
+  background-color: var(--cafe-gold);
+  border-color: var(--cafe-gold);
+  color: var(--cafe-darker);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.cafe-btn-gold:hover {
+  background-color: var(--cafe-gold-light);
+  border-color: var(--cafe-gold-light);
+  color: var(--cafe-darker);
+  transform: translateY(-2px);
+}
+
+/* ---- ESTADÍSTICAS ---- */
+.cafe-stats-bar {
+  background-color: var(--cafe-gold);
+}
+
+.cafe-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--cafe-darker);
+  line-height: 1;
+}
+
+.cafe-stat-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cafe-dark);
+  margin-top: 2px;
+}
+
+/* ---- SECCIÓN TÍTULOS ---- */
+.cafe-section-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cafe-gold);
+  margin-bottom: 0.4rem;
+}
+
+.cafe-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--cafe-dark);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.cafe-section-sub {
+  color: var(--cafe-text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* ---- SECCIÓN PRODUCTOS ---- */
+.cafe-productos-section {
+  background-color: var(--cafe-cream);
+}
+
+/* ---- CARDS ---- */
+.cafe-card {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--cafe-card-bg);
+  box-shadow: 0 2px 10px rgba(44,26,14,0.08);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  overflow: hidden;
+}
+
+.cafe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(44,26,14,0.14);
+}
+
+/* Franja de color superior de la card */
+.cafe-card-img-wrap {
+  height: var(--cafe-wrap-h);
+  background-color: var(--cafe-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cafe-card-emoji {
+  font-size: 2.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Variaciones de color por producto */
+.cafe-wrap-2  { background-color: #4A2C14; }
+.cafe-wrap-3  { background-color: #3D2010; }
+.cafe-wrap-4  { background-color: #1A3A4A; }
+.cafe-wrap-5  { background-color: #2A1A0A; }
+.cafe-wrap-6  { background-color: #163040; }
+.cafe-wrap-7  { background-color: #6B4226; }
+.cafe-wrap-8  { background-color: #7A4A2A; }
+.cafe-wrap-9  { background-color: #5A1A0A; }
+.cafe-wrap-10 { background-color: #5C3D1E; }
+.cafe-wrap-11 { background-color: #3A2A0A; }
+.cafe-wrap-12 { background-color: #4A1A0A; }
+.cafe-wrap-13 { background-color: #1A2A3A; }
+.cafe-wrap-14 { background-color: #3A2A1A; }
+.cafe-wrap-15 { background-color: #6A3A1A; }
+
+/* Badge */
+.cafe-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--cafe-gold);
+  color: var(--cafe-darker);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.cafe-badge-azul {
+  background-color: #2980b9;
+  color: #fff;
+}
+
+.cafe-badge-verde {
+  background-color: #27ae60;
+  color: #fff;
+}
+
+/* Card body */
+.cafe-card .card-body {
+  padding: 1rem;
+}
+
+.cafe-categoria {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cafe-gold);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cafe-card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cafe-dark);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.cafe-card-desc {
+  font-size: 0.8rem;
+  color: var(--cafe-text-muted);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* Card footer */
+.cafe-card-footer {
+  background-color: transparent;
+  border-top: 1px solid var(--cafe-cream-dark);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cafe-precio {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cafe-dark);
+}
+
+/* ---- NOSOTROS ---- */
+.cafe-nosotros {
+  background-color: var(--cafe-darker);
+}
+
+.cafe-nosotros .cafe-section-eyebrow {
+  color: var(--cafe-gold);
+}
+
+.cafe-nosotros .cafe-section-title {
+  color: var(--cafe-cream);
+}
+
+.cafe-nosotros p {
+  color: rgba(245,236,215,0.75) !important;
+}
+
+.cafe-nosotros-icon {
+  font-size: clamp(5rem, 15vw, 9rem);
+  line-height: 1;
+  filter: drop-shadow(0 4px 24px rgba(200,151,58,0.3));
+}
+
+.cafe-chip {
+  display: inline-block;
+  background-color: rgba(200,151,58,0.15);
+  border: 1px solid rgba(200,151,58,0.3);
+  color: var(--cafe-gold-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 2px;
+  letter-spacing: 0.03em;
+}
+
+/* ---- UBICACIÓN ---- */
+.cafe-ubicacion-section {
+  background-color: var(--cafe-cream-dark);
+}
+
+.cafe-info-card {
+  background-color: var(--cafe-card-bg);
+  border-radius: 6px;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(44,26,14,0.07);
+  height: 100%;
+}
+
+.cafe-info-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.cafe-info-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cafe-dark);
+  margin-bottom: 0.5rem;
+}
+
+.cafe-info-text {
+  font-size: 0.85rem;
+  color: var(--cafe-text-muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ---- FOOTER ---- */
+.cafe-footer {
+  background-color: var(--cafe-darker);
+  border-top: 2px solid var(--cafe-gold);
+}
+
+.cafe-footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cafe-gold);
+}
+
+.cafe-footer-copy {
+  font-size: 0.78rem;
+  color: rgba(245,236,215,0.5);
+  letter-spacing: 0.04em;
+}
+
+/* ============================================
+   RESPONSIVE — Mobile First
+   Base: mobile
+   sm  ≥ 576px
+   md  ≥ 768px
+   lg  ≥ 992px
+   xl  ≥ 1200px
+   ============================================ */
+
+/* sm → tableta pequeña */
+@media (min-width: 576px) {
+  .cafe-hero {
+    min-height: 70vh;
+  }
+  .cafe-stat-num {
+    font-size: 2rem;
+  }
+  .cafe-stat-label {
+    font-size: 0.75rem;
+  }
+  :root {
+    --cafe-wrap-h: 130px;
+  }
+}
+
+/* md → tableta */
+@media (min-width: 768px) {
+  .cafe-hero {
+    min-height: 80vh;
+  }
+  .cafe-hero-sub {
+    font-size: 1.05rem;
+  }
+  :root {
+    --cafe-wrap-h: 140px;
+  }
+  .cafe-card-emoji {
+    font-size: 3.2rem;
+  }
+  .cafe-nosotros-icon {
+    font-size: 8rem;
+  }
+}
+
+/* lg → desktop */
+@media (min-width: 992px) {
+  .cafe-navbar .nav-link {
+    font-size: 0.8rem;
+  }
+  .cafe-hero {
+    min-height: 85vh;
+  }
+  :root {
+    --cafe-wrap-h: 150px;
+  }
+  .cafe-card-title {
+    font-size: 1.05rem;
+  }
+  .cafe-card-desc {
+    font-size: 0.82rem;
+  }
+}
+
+/* xl → pantallas grandes */
+@media (min-width: 1200px) {
+  :root {
+    --cafe-wrap-h: 160px;
+  }
+  .cafe-card-emoji {
+    font-size: 3.4rem;
+  }
+}
